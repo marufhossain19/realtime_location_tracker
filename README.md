@@ -8,7 +8,7 @@ A Flutter mobile application demonstrating real-time GPS tracking, smooth Google
 
 | Real-Time Location with Info Window | Polyline Tracking along Path |
 |:---:|:---:|
-| ![Info Window](output_screens/screen1.png) | ![Polyline Path](output_screens/screen2.png) |
+| <img src="Output%20screen/photo_6275815915706323881_y.jpg" alt="Info Window Screen" width="350"/> | <img src="Output%20screen/photo_6275815915706323882_y.jpg" alt="Polyline Route Screen" width="350"/> |
 | *Marker with "My Current Location" & Lat/Lng snippet* | *Dynamic blue polyline tracing movements* |
 
 ---
@@ -24,47 +24,27 @@ A Flutter mobile application demonstrating real-time GPS tracking, smooth Google
 
 ---
 
-## 🏗️ Architecture & Data Flow
-
-```mermaid
-flowchart TD
-    A["App Launch (main.dart)"] --> B["Check & Request Location Permission"]
-    B -->|Granted| C["Fetch Initial Location (Geolocator)"]
-    B -->|Denied| D["Display Permission Warning"]
-    C --> E["GoogleMap onMapCreated"]
-    E --> F["Smooth Camera Animation to User Position"]
-    F --> G["Render Red Marker with InfoWindow"]
-    G --> H["Start 10-Second Periodic Timer"]
-    H --> I["Fetch Latest GPS Coordinates"]
-    I --> J["Append LatLng to Polyline Points"]
-    J --> K["Update Marker Position & InfoWindow Snippet"]
-    K --> L["Smoothly Animate Map Camera"]
-    L --> H
-```
-
----
-
 ## 📂 Project Structure
 
 ```text
 realtime_location_tracker/
-├── android/                        # Android native configuration & Gradle wrapper
+├── android/                         # Android native configuration & Gradle wrapper
 │   ├── app/
-│   │   ├── build.gradle.kts        # Android build configuration & target SDK
+│   │   ├── build.gradle.kts         # Android build configuration & target SDK
 │   │   └── src/main/
-│   │       └── AndroidManifest.xml # Permissions (FINE/COARSE location) & Google Maps API key
+│   │       └── AndroidManifest.xml  # Permissions (FINE/COARSE location) & Google Maps API key placeholder
 │   ├── gradle/wrapper/
 │   │   └── gradle-wrapper.properties # Gradle 8.14 distribution
 │   └── build.gradle.kts
-├── ios/                            # iOS native Runner & Info.plist permissions
+├── ios/                             # iOS native Runner & Info.plist permissions
 ├── lib/
-│   ├── main.dart                   # Application entry point & MaterialApp configuration
+│   ├── main.dart                    # Application entry point & MaterialApp configuration
 │   └── real_time_location_tracker_screen.dart # Core logic for Google Map, Geolocator & Polylines
-├── output_screens/                 # Assignment demonstration screenshots
-│   ├── screen1.png                 # Screen displaying InfoWindow with coordinates
-│   └── screen2.png                 # Screen displaying polyline tracking route
-├── pubspec.yaml                    # Flutter dependencies (geolocator, google_maps_flutter)
-└── README.md                       # Assignment documentation
+├── Output screen/                   # Assignment demonstration screenshots
+│   ├── photo_6275815915706323881_y.jpg # Screen displaying InfoWindow with coordinates
+│   └── photo_6275815915706323882_y.jpg # Screen displaying polyline tracking route
+├── pubspec.yaml                     # Flutter dependencies (geolocator, google_maps_flutter)
+└── README.md                        # Assignment documentation
 ```
 
 ---
@@ -121,4 +101,3 @@ To run Google Maps with your own API key:
    flutter build apk --release
    ```
    *The release APK will be located at `build/app/outputs/flutter-apk/app-release.apk`.*
-
