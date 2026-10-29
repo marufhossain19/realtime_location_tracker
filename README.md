@@ -90,6 +90,14 @@ dependencies:
 - Android Studio / VS Code with Flutter extensions
 - Android device or emulator with Google Play Services enabled
 
+### 🔑 Google Maps API Configuration
+To run Google Maps with your own API key:
+- Add your key to `android/local.properties`:
+  ```properties
+  MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+  ```
+*(Note: `android/local.properties` is protected by `.gitignore` so your API key is never exposed on GitHub).*
+
 ### Installation & Run Steps
 
 1. **Clone the repository:**
